@@ -1,0 +1,32 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(32, 32, 32);
+        color: rgb(230, 230, 230);
+    }
+}
+
+@media (prefers-color-scheme: light){
+    body {
+        background-color: white;
+        color: black;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    div.main {
+        font-size: 16px;
+        margin: 10px;
+    }
+}
+
+* {
+    font-family: monospace;
+}
+
+div.main {
+    margin: 15px;
+}
+
+::selection{
+    background-color: rgba(255, 230, 0, 0.336);
+}
