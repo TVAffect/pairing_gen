@@ -3,12 +3,46 @@
         background-color: rgb(32, 32, 32);
         color: rgb(230, 230, 230);
     }
+
+    button.std {
+        background-color: rgb(56 56 56);
+        color: rgb(230 230 230)
+    }
+
+    button.std:hover {
+        background-color: rgb(14, 133, 20);
+    }
+
+    button.back:hover {
+        color: rgb(179, 179, 179);
+    }
+
+    select#charSel {
+        background-color: rgb(56, 56, 56);
+        color: rgb(230, 230, 230);
+    }
 }
 
 @media (prefers-color-scheme: light){
     body {
-        background-color: white;
+        background-color: rgb(236, 236, 236);
         color: black;
+    }
+
+    button.std {
+        background-color: rgb(255, 255, 255);
+    }
+
+    button.std:hover {
+        background-color: rgb(213, 255, 157);
+    }
+
+    button.back:hover {
+        color: rgb(97, 97, 97);
+    }
+
+    select#charSel {
+        background-color: white;
     }
 }
 
@@ -16,6 +50,10 @@
     div.main {
         font-size: 16px;
         margin: 10px;
+    }
+
+    button.std {
+        font-size: 18px;
     }
 }
 
@@ -25,8 +63,58 @@
 
 div.main {
     margin: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 ::selection{
-    background-color: rgba(255, 230, 0, 0.336);
+    background-color: rgba(43, 255, 0, 0.336);
+}
+
+button.std {
+    appearance: none;
+    text-decoration: none;
+    border: 0;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Lucida Console', monospace;
+    transition: 0.3s;
+    box-shadow: 0 0 5px rgb(0 0 0 / 0.5);
+}
+
+button.std:hover {
+    cursor: pointer;
+}
+
+div.slidable {
+    text-align: center;
+    display: none;
+}
+
+select#charSel {
+    appearance: none;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 0.5);
+}
+
+button.back {
+    appearance: none;
+    text-decoration: none;
+    color: gray;
+    background: none;
+    border: none;
+    transition: 0.3s;
+}
+
+button.back:hover {
+    cursor: pointer;
 }
