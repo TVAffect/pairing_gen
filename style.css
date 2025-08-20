@@ -59,6 +59,7 @@
 
 * {
     font-family: monospace;
+    font-size: 18px;
 }
 
 div.main {
@@ -76,12 +77,12 @@ button.std {
     appearance: none;
     text-decoration: none;
     border: 0;
-    padding-left: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-right: 10px;
-    border-radius: 10px;
-    font-size: 16px;
+    padding-left: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 12px;
+    border-radius: 12px;
+    font-size: 18px;
     font-family: 'Lucida Console', monospace;
     transition: 0.3s;
     box-shadow: 0 0 5px rgb(0 0 0 / 0.5);
