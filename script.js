@@ -42,6 +42,57 @@ const listHaukka = [
   "Йост"
 ];
 
+const listDLCSchizoRIP = [
+    "Лента",
+    "Уска",
+    "Остри",
+    "Багула",
+    "Звера",
+    "Краткий",
+    "Ёшка",
+    "Вилсент (Ви)",
+    "Шаурма",
+    "Королёк",
+    "Таина",
+    "Плантик",
+    "Яша",
+    "Эббл",
+    "Морожка",
+    "Касане Тето",
+    "Ненера Бицу",
+    "Эрно Микконен",
+    "Золотая Чаша",
+    "Ничто",
+    "Тьма",
+    "Окно",
+    "Аникет",
+    "Дарьяна",
+    "Пикчер",
+    "Карась",
+    "Фриггис",
+    "Плюш Ёшка",
+    "Кон",
+    "Наглядевшаяся Туманом",
+    "Тихая Ночь",
+    "Громкое Утро",
+    "Острохвостка",
+    "Нови",
+    "Лис из плазмы",
+    "Чашик",
+    "Кружик",
+    "Баттерс",
+    "Грациэль",
+    "Алиса",
+    "Инфи Асу",
+    "Индра",
+    "Алекс",
+    "Кью (Луисовская СС)",
+    "Фриггисовская СС",
+    "Шизополка",
+    "Многовопросье",
+    "Ликёр"
+]
+
 const symbols = [
     "/",
     " x "
@@ -67,37 +118,48 @@ $(document).ready(() => {
     }
 
     $('#choice-1-1-next').click(function() {
-        workList = listRPersSchizoRIP;
-        console.log("Выбран список 'Ролевики Шизополки':", workList);
-        changeSlide(1);
+        console.log("Выбрана Шизополка")
+        changeSlide(5)
     });
 
     $('#choice-1-2-next').click(function() {
-        workList = listCharsSchizoRIP;
-        console.log("Выбран список 'Персонажи Шизополки':", workList);
-        changeSlide(1);
-    });
-
-    $('#choice-1-3-next').click(function() {
         workList = listHaukka;
         console.log("Выбран список 'Хаукка':", workList);
         changeSlide(1);
     });
 
-    $('#choice-1-4-next').click(function() {
+    $('#choice-1-3-next').click(function() {
         console.log("Выбран кроссовер");
         changeSlide(2);
     });
 
     $('#choice-22-1-next').click(function() {
+        workList = listDLCSchizoRIP.concat(listHaukka);
+        console.log("Создан объединённый список всего:", workList);
+        changeSlide(1);
+    });
+
+    $('#choice-11-1-next').click(function() {
+        workList = listCharsSchizoRIP;
+        console.log("Выбран список 'Персонажи Шизополки':", workList);
+        changeSlide(1);
+    });
+
+    $('#choice-11-2-next').click(function() {
+        workList = listRPersSchizoRIP;
+        console.log("Выбран список 'Ролевики Шизополки':", workList);
+        changeSlide(1);
+    });
+
+    $('#choice-11-3-next').click(function() {
         workList = listRPersSchizoRIP.concat(listCharsSchizoRIP);
         console.log("Создан объединённый список Шизополки:", workList);
         changeSlide(1);
     });
 
-    $('#choice-22-2-next').click(function() {
-        workList = listRPersSchizoRIP.concat(listCharsSchizoRIP, listHaukka);
-        console.log("Создан объединённый список всего:", workList);
+    $('#choice-11-4-next').click(function() {
+        workList = listDLCSchizoRIP;
+        console.log("Выбран список Шизополки DLC:", workList);
         changeSlide(1);
     });
 
@@ -154,12 +216,21 @@ $(document).ready(() => {
             var usedSymbol = symbols[Math.floor(Math.random() * symbols.length)];
             console.log(usedSymbol)
         }
-        pairing=(char1+usedSymbol+char2)
-        document.querySelector("#output").innerHTML=pairing
-        changeSlide(3)
+        if (selectedChar == undefined) {
+            alert("Выберите персонажа")
+        } 
+        else {
+            pairing=(char1+usedSymbol+char2)
+            document.querySelector("#output").innerHTML=pairing
+            changeSlide(3)
+        }
     });
 
     $('#back2').click(function(){
+        changeSlide(0)
+    });
+
+    $('#back11').click(function(){
         changeSlide(0)
     });
 
@@ -177,44 +248,3 @@ $(document).ready(() => {
 
 });
 
-/*
-    8: "Люми(Уска)",
-    9: "Таина",
-    10: "Шаурма",
-    11: "Альтеры Уски",
-    12: "Ничто",
-    13: "Тьма",
-    14: "Окно",
-    15: "Аникет",
-    16: "Ёшка",
-    17: "Дарьяна",
-    18: "Пикчер",
-    19: "Карась",
-    20: "Фриггис",
-    21: "Золотая Чаша",
-    22: "Плюш Ёшка",
-    23: "Кон",
-    24: "Наглядевшаяся Туманом",
-    25: "Тихая Ночь",
-    26: "Громкое Утро",
-    27: "Острохвостка",
-    28: "Нови",
-    29: "Лис из плазмы",
-    30: "Морожка",
-    31: "Плантик",
-    32: "Эббл",
-    33: "Чашик",
-    34: "Кружик",
-    35: "Алекс",
-    36: "Алиса",
-    37: "Баттерс",
-    38: "Грациэль",
-    39: "Инфи Асу",
-    40: "Индра",
-    41: "Сущность Созидания(фриггисовская)",
-    42: "Сущность Созидания(луисовская)",
-    43: "Многовопросье",
-    44: "Ликёр",
-    45: "Шизополка",
-    46: "Персонажи Ленты"
-*/
