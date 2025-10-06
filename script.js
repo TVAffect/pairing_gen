@@ -6,7 +6,9 @@ const listRPersSchizoRIP = [
   "Краткий",
   "Королёк",
   "Шаурма",
-  "Ёшка"
+  "Ёшка",
+  "Даня",
+  "Анчо"
 ];
 
 const listCharsSchizoRIP = [
@@ -17,7 +19,9 @@ const listCharsSchizoRIP = [
   "Ненера Бицу",
   "Эрно Микконен",
   "Золотая Чаша",
-  "Ничто"
+  "Ничто",
+  "Пикчер",
+  "Карась"
 ];
 
 const listHaukka = [
@@ -53,6 +57,8 @@ const listDLCSchizoRIP = [
     "Вилсент (Ви)",
     "Шаурма",
     "Королёк",
+    "Даня",
+    "Анчо",
     "Таина",
     "Плантик",
     "Яша",
@@ -93,6 +99,43 @@ const listDLCSchizoRIP = [
     "Ликёр"
 ]
 
+const listAvACanon = [
+    "Секонд",
+    "Красный",
+    "Жёлтый",
+    "Голубой",
+    "Зелёный",
+    "Фиолетовый",
+    "Избранный",
+    "Дарк Лорд",
+    "Виктим",
+    "Агент",
+    "Митси",
+    "Хазард",
+    "Баллиста",
+    "Примал",
+    "Манго",
+    "Нави",
+    "Розовая",
+    "Голд",
+    "Тот капиталист",
+    "Работник пробирочный",
+    "Боб",
+    "Ведьма",
+    "Варден",
+    "Паук",
+    "Скеллингтон",
+    "Энди",
+    "Херобрин",
+    "Рубен",
+    "Алан Беккер",
+    "Диджей"
+]
+
+const listAvARPOnly = [
+    "Дизастер"
+]
+
 const symbols = [
     "/",
     " x "
@@ -129,12 +172,17 @@ $(document).ready(() => {
     });
 
     $('#choice-1-3-next').click(function() {
+        console.log("Выбран AvA");
+        changeSlide(6);
+    });
+
+    $('#choice-1-4-next').click(function() {
         console.log("Выбран кроссовер");
         changeSlide(2);
     });
 
     $('#choice-22-1-next').click(function() {
-        workList = listDLCSchizoRIP.concat(listHaukka);
+        workList = listDLCSchizoRIP.concat(listHaukka, listAvACanon, listAvARPOnly);
         console.log("Создан объединённый список всего:", workList);
         changeSlide(1);
     });
@@ -160,6 +208,18 @@ $(document).ready(() => {
     $('#choice-11-4-next').click(function() {
         workList = listDLCSchizoRIP;
         console.log("Выбран список Шизополки DLC:", workList);
+        changeSlide(1);
+    });
+
+    $('#choice-111-1-next').click(function() {
+        workList = listAvACanon;
+        console.log("Выбран список каноничного AvA:", workList);
+        changeSlide(1);
+    });
+
+    $('#choice-111-2-next').click(function() {
+        workList = listAvACanon.concat(listAvARPOnly);
+        console.log("Выбран список всей той ролки по AvA:", workList);
         changeSlide(1);
     });
 
@@ -231,6 +291,10 @@ $(document).ready(() => {
     });
 
     $('#back11').click(function(){
+        changeSlide(0)
+    });
+
+    $('#back111').click(function(){
         changeSlide(0)
     });
 
