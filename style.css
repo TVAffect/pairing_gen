@@ -106,7 +106,7 @@ select#charSel {
     box-shadow: 0 0 5px rgb(0 0 0 / 0.5);
 }
 
-button.back {
+button.back-primlists, button:back-def {
     appearance: none;
     text-decoration: none;
     color: gray;
@@ -115,6 +115,6 @@ button.back {
     transition: 0.3s;
 }
 
-button.back:hover {
+button.back-primlists, button.back-def:hover {
     cursor: pointer;
 }

@@ -33,7 +33,7 @@ $(document).ready(() => {
 
     $(".std").click(function() {
         if($(this).attr("id").includes("choice")) {
-
+            
         }
     });
 });
